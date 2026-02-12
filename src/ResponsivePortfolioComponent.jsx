@@ -119,7 +119,7 @@ export default function ResponsivePortfolioComponent() {
         <div className="mx-auto px-8 py-4 flex justify-between items-center">
           {/* LEFT NAME */}
           <p className="text-gray-100 font-semibold tracking-wide text-lg mix-blend-difference font-outfit lowercase">
-            jil.works
+            jil.mak
           </p>
 
           {/* MENU BUTTON */}
