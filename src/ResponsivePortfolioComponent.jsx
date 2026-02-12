@@ -6,7 +6,7 @@ import Lenis from "lenis";
 import AbstractVideo from './assets/LA.mp4'; // Ensure this matches user's video path or use placeholder if not sure
 
 // IMPORT IMAGES
-import ExperienceImg from "./J1.HEIC";
+import ExperienceImg from "./assets/1.jpg";
 import EducationImg1 from "./P2.jpg";
 import EducationImg2 from "./P1.jpeg";
 import ResumePdf from "./Resume.pdf";
