@@ -188,25 +188,53 @@ export default function ResponsivePortfolioComponent() {
 
         {/* --- Text Mask Layer --- */}
         {/* --- Text Mask Layer --- */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center leading-[0.9] mix-blend-screen font-bodoni">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center leading-[0.9] mix-blend-screen font-bodoni -mt-20">
 
-          <h1 className="text-[13.5vw] font-extrabold uppercase tracking-tight text-white drop-shadow-2xl">
+          <h1 className="text-[11.5vw] font-extrabold uppercase tracking-tight text-white drop-shadow-2xl">
             CREATIVE
           </h1>
 
-          <h1 className="text-[13.5vw] font-extrabold uppercase tracking-tight text-white drop-shadow-2xl mt-0">
+          <h1 className="text-[11.5vw] font-extrabold uppercase tracking-tight text-white drop-shadow-2xl mt-0">
             MADNESS
           </h1>
         </div>
 
+
         {/* Quick Intro Box */}
-        <div className="absolute bottom-8 md:bottom-12 max-w-md text-center px-4 glass-box p-4 md:p-6 animate-in fade-in slide-in-from-bottom-10 duration-1000 z-20">
-          <p className="text-gray-200 text-sm md:text-base leading-relaxed tracking-wide font-light">
-            Crafting digital experiences through code, rhythm, and motion.
-            My name is <span className="text-white font-bold">Jil Makwana</span>.
-          </p>
+        <div className="absolute bottom-10 z-20 animate-in fade-in slide-in-from-bottom-10 duration-1000 w-full flex justify-center px-6">
+          <div className="max-w-2xl w-full bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-8 py-4 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 hover:bg-black/50 transition-colors duration-300">
+            <p className="text-gray-200 text-sm md:text-base font-light font-outfit italic text-center md:text-left">
+              "Everyone is crazy in their own way and that makes everyone unique & Different."
+            </p>
+
+            <div className="hidden md:block w-[1px] h-8 bg-white/20"></div>
+
+            <p className="text-white/90 text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] whitespace-nowrap">
+              Wanna dive deep into my Crazy world?.
+            </p>
+          </div>
         </div>
       </div>
+
+
+      {/* ---------------------------------------------------------------- */}
+      {/* =========================== INTRO / ABOUT ====================== */}
+      {/* ---------------------------------------------------------------- */}
+
+      <section className="min-h-screen flex items-center justify-center px-6 bg-black text-white relative overflow-hidden font-outfit">
+        <AuroraBackground variant="red" />
+        <div className="max-w-5xl mx-auto relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-2xl md:text-3xl text-gray-300 leading-relaxed font-light max-w-4xl mx-auto">
+              "Hi, my name is Jil, I build apps with people, not just for them. I focus on understanding client needs deeply, asking the right questions, and turning real challenges into practical, user-centered solutions." </p>
+          </motion.div>
+        </div>
+      </section>
 
 
       {/* ---------------------------------------------------------------- */}
@@ -608,7 +636,7 @@ export default function ResponsivePortfolioComponent() {
         {/* GIANT TYPOGRAPHY */}
         <div className="relative z-10 w-full flex justify-center overflow-hidden pb-4 md:pb-8">
           <h1 className="text-[13vw] md:text-[15vw] font-bold leading-tight tracking-tighter text-white select-none font-outfit lowercase mix-blend-overlay opacity-50">
-            jil.works
+            One Life
           </h1>
         </div>
 

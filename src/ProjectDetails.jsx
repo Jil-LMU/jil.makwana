@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Github, Globe } from "lucide-react";
+import { ArrowLeft, Github, Globe, AlertTriangle, TrendingUp, Shield } from "lucide-react";
 import { projects } from "./data";
 import Lenis from "lenis";
 
@@ -170,6 +170,52 @@ export default function ProjectDetails() {
                                     <h2 className="text-3xl font-bold text-white mb-4">Approach & Analysis</h2>
                                     <p className="text-gray-300">{project.approach || "Analysis phase details coming soon..."}</p>
                                 </section>
+
+                                {project.keyVariables && (
+                                    <section>
+                                        <h2 className="text-3xl font-bold text-white mb-6">Key Variable Interpretation</h2>
+                                        <div className="grid gap-6">
+                                            {project.keyVariables.map((variable, index) => (
+                                                <motion.div
+                                                    key={index}
+                                                    initial={{ opacity: 0, y: 20 }}
+                                                    whileInView={{ opacity: 1, y: 0 }}
+                                                    transition={{ delay: index * 0.1 }}
+                                                    className={`p-6 rounded-2xl border ${variable.type === 'risk' ? 'border-red-500/20 bg-red-500/5' : 'border-green-500/20 bg-green-500/5'}`}
+                                                >
+                                                    <div className="flex items-start gap-4">
+                                                        <div className={`p-3 rounded-xl ${variable.type === 'risk' ? 'bg-red-500/10 text-red-500' : 'bg-green-500/10 text-green-500'}`}>
+                                                            {variable.type === 'risk' ? (
+                                                                variable.title === "Crime Rate" ? <AlertTriangle size={24} /> : <TrendingUp size={24} />
+                                                            ) : (
+                                                                <Shield size={24} />
+                                                            )}
+                                                        </div>
+                                                        <div>
+                                                            <h3 className="text-xl font-bold text-white mb-1">{variable.title}</h3>
+                                                            <p className={`text-sm font-semibold mb-3 ${variable.type === 'risk' ? 'text-red-400' : 'text-green-400'}`}>
+                                                                {variable.sub}
+                                                            </p>
+                                                            <p className="text-gray-400 text-base mb-3 leading-relaxed">
+                                                                {variable.description}
+                                                            </p>
+                                                            <div className="flex flex-wrap gap-4 text-sm">
+                                                                <div className="bg-zinc-900 px-3 py-1.5 rounded-lg border border-zinc-800">
+                                                                    <span className="text-gray-500 mr-2">Hazard Ratio:</span>
+                                                                    <span className="text-white font-mono">{variable.hazardRatio}</span>
+                                                                </div>
+                                                                <div className="bg-zinc-900 px-3 py-1.5 rounded-lg border border-zinc-800">
+                                                                    <span className="text-gray-500 mr-2">Insight:</span>
+                                                                    <span className="text-white">{variable.insight}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    </section>
+                                )}
 
                                 <section>
                                     <h2 className="text-3xl font-bold text-white mb-4">The Solution</h2>
